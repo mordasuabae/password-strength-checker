@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Password strength checker</title>
+</head>
+<body>
+    <div class="container button">
+         <p>Email</p>
+        <input id="email" type="text" placeholder="email">
+         <p>Password</p>
+         <div class="show-hide">
+             <input id="password" type="password" placeholder="password" ></input>
+             <span ><i id="eye" class="far fa-eye"></i></span>
+         </div>
+         <!-- progress  bar -->
+         <div id="progress-container">
+            <div id="bar"></div>
+         </div>
+         <!-- -->
+        <p><span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span><span id="lowercase-uppercase"><i class='fas fa-check' style="color: lawngreen;"></i></span>Lower Case & Uppercase</p>
+        <p><span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span><span id="zero-to-nine"><i class='fas fa-check' style="color: lawngreen;"></i></span>Numbers(0-9)</p>
+        <p><span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span><span id="special-character"><i class='fas fa-check' style="color: lawngreen;"></i></span>Special Character</p>
+        <p><span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span><span id="eight-characters"><i class='fas fa-check' style="color: lawngreen;"></i></span>Atleast 8 characters</p>
+        <button>Create Account</button>
+        <p id="signin">Already have an account? Sign in here</p>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+</body>
+</html>
