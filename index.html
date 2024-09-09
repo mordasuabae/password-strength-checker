@@ -7,9 +7,14 @@
     <title>Password strength checker</title>
 </head>
 <body>
-    <div class="container button">
+    <!-- Sign in -->
+    <div class="sign-in-container button">
+         <p>Name</p>
+        <input id="name" type="text" placeholder="name">
+        <input id="name2" type="text" placeholder="">
          <p>Email</p>
         <input id="email" type="text" placeholder="email">
+        <input id="email2" type="text" placeholder="">
          <p>Password</p>
          <div class="show-hide">
              <input id="password" type="password" placeholder="password" ></input>
@@ -20,13 +25,50 @@
             <div id="bar"></div>
          </div>
          <!-- -->
-        <p><span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span><span id="lowercase-uppercase"><i class='fas fa-check' style="color: lawngreen;"></i></span>Lower Case & Uppercase</p>
-        <p><span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span><span id="zero-to-nine"><i class='fas fa-check' style="color: lawngreen;"></i></span>Numbers(0-9)</p>
-        <p><span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span><span id="special-character"><i class='fas fa-check' style="color: lawngreen;"></i></span>Special Character</p>
-        <p><span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span><span id="eight-characters"><i class='fas fa-check' style="color: lawngreen;"></i></span>Atleast 8 characters</p>
+        <p>
+            Lower Case & Uppercase
+            <!-- <span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span> -->
+            <span id="lowercase-uppercase"><i class='fas fa-check' style="color: lawngreen;"></i></span>
+        </p>
+        <p>
+            Numbers(0-9)
+            <!-- <span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span> -->
+            <span id="zero-to-nine"><i class='fas fa-check' style="color: lawngreen;"></i></span>  
+        </p>
+        <p>
+            Special Character
+            <!-- <span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span> -->
+            <span id="special-character"><i class='fas fa-check' style="color: lawngreen;"></i></span>
+        </p>
+        <p>
+            Atleast 8 characters
+            <!-- <span id="fas-block"><i class="fas fa-circle" aria-hidden="true" style="font-size: 10px;"></i></span> -->
+            <span id="eight-characters"><i class='fas fa-check' style="color: lawngreen;"></i></span>
+        </p>
         <button>Create Account</button>
-        <p id="signin">Already have an account? Sign in here</p>
+        <p id="signin">Already have an account? Log in here</p>
+        <!-- </br> -->
+        <!-- </br> -->
     </div>
+    <!-- Log in -->
+    <div class="log-in-container">
+        <p>Email</p>
+        <input id="log-in-email" type="text" placeholder="email">
+        <input id="log-in-email2" type="text" placeholder="">
+         <p>Password</p>
+         <div class="show-hide">
+             <input id="log-in-password" type="password" placeholder="password" ></input>
+             <span ><i id="eye" class="far fa-eye"></i></span>
+         </div>
+         <button>Login</button>
+        <p id="signin">Dont have an account? Sign up here</p>
+    </div>
+
+    <!-- Profiles -->
+
+    <!-- <div class="log-in-container">
+    </div> -->
+
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 </body>

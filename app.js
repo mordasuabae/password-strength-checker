@@ -1,10 +1,10 @@
-var block =document.getElementById('fas-block')
-var eightCharacters =document.getElementById('eight-characters')
-var specialCharacters =document.getElementById('special-character')
-var zeroToNine =document.getElementById('zero-to-nine')
-var lowercaseUppercase =document.getElementById('lowercase-uppercase')
-var eye =document.getElementById('eye')
-var progressbar =document.getElementById('bar')
+var block =  document.getElementById('fas-block')
+var eightCharacters = document.getElementById('eight-characters')
+var specialCharacters = document.getElementById('special-character')
+var zeroToNine = document.getElementById('zero-to-nine')
+var lowercaseUppercase = document.getElementById('lowercase-uppercase')
+let eye = document.getElementById('eye')
+var progressbar = document.getElementById('bar')
 
 eye.addEventListener('click',showHidePassword)
 
@@ -173,7 +173,7 @@ function passwordStrength(e) {
             progressbar.style.width = perc +'%'
 
 
-        }else if(truthy.includes(false) && truthy.includes(false) || truthy.includes(true) && truthy.includes(true)){
+        }else if(truthy.includes(false) || truthy.includes(true)){
             lowercaseUppercase.style.display = 'none'
             if(lowerAndUpperFound === true){
                 perc -= 25
