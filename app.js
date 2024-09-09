@@ -4,11 +4,20 @@ var specialCharacters = document.getElementById('special-character')
 var zeroToNine = document.getElementById('zero-to-nine')
 var lowercaseUppercase = document.getElementById('lowercase-uppercase')
 let eye = document.getElementById('eye')
+let loginEye = document.getElementById('login-eye')
 var progressbar = document.getElementById('bar')
 
+let numberCharacter = document.getElementById('password-strength-number')
+let specialCharacter = document.getElementById('password-strength-special-character')
+let lowerUpperCharacter = document.getElementById('password-strength-lower-upper')
+let eighthCharacter = document.getElementById('password-strength-eight-character')
+
+
 eye.addEventListener('click',showHidePassword)
+loginEye.addEventListener('click',logInShowHidePassword)
 
 var password = document.getElementById('password')
+var logInPassword = document.getElementById('log-in-password')
 password.addEventListener('keydown',CharacterCount)
 password.addEventListener('input',passwordStrength)
 
@@ -36,6 +45,27 @@ function showHidePassword() {
     }
 
 }
+function logInShowHidePassword() {
+    
+    //toggle
+    if(isClicked === false){
+        isClicked = true
+    }else{
+        isClicked = !isClicked
+    }
+    console.log('isClicked ?',isClicked)
+
+    if(isClicked){
+        logInPassword.setAttribute('type','text')
+        logInPassword.innerHTML = logInPassword.value
+
+        loginEye.style.textDecoration = 'line-through'
+    }else{
+        logInPassword.setAttribute('type','password')
+        loginEye.style.textDecoration = 'none'
+    }
+
+}
 var count = 0
 var perc = 0;
 //Global count
@@ -53,6 +83,7 @@ function CharacterCount(e) {
         if(count > 7 && count < 9){
             if(count > 7 && count === 8){
                 eightCharacters.style.display = 'block'
+                eighthCharacter.style.color = 'white'
                 perc += 25
             }
             progressbar.style.width = perc +'%'
@@ -64,7 +95,7 @@ function CharacterCount(e) {
         if(count > 0){
             count--
         }
-        if( count === 7){
+        if(count === 7){
             if(perc > 0){
                 perc -= 25
             }
@@ -72,7 +103,9 @@ function CharacterCount(e) {
             progressbar.style.width = perc +'%'
         }
         if(count < 8){
-            eightCharacters.style.display = 'none'    
+            eightCharacters.style.display = 'none' 
+            eighthCharacter.style.color = 'grey'
+  
         } 
     
     }
@@ -104,6 +137,7 @@ function passwordStrength(e) {
             progressbar.style.width = perc +'%'
 
             specialCharacters.style.display = 'block'
+            specialCharacter.style.color = 'white'
 
         }else{
             
@@ -116,15 +150,17 @@ function passwordStrength(e) {
       
             progressbar.style.width = perc +'%'
             specialCharacters.style.display = 'none'
+            specialCharacter.style.color = 'grey'
         }
 
-        //zero to nine numbers
+        //number character
         var number = (/(\d+)/)
         if(number.test(password.value)){
             zeroToNine.style.display = 'block'
             if(numberWasIncluded === false){
                 perc += 25
                 numberWasIncluded = true
+                numberCharacter.style.color = 'white'
             }
             progressbar.style.width = perc +'%'
             
@@ -136,6 +172,7 @@ function passwordStrength(e) {
                 numberWasIncluded = false
                 if(perc > 0 && numberWasIncluded === false){
                     perc = perc - 25
+                    numberCharacter.style.color = 'grey'
                 }
             }            
             progressbar.style.width = perc +'%'
@@ -167,6 +204,7 @@ function passwordStrength(e) {
             console.log('Hooray!')
             if(lowerAndUpperFound === false){
                 lowercaseUppercase.style.display = 'block'
+                lowerUpperCharacter.style.color = 'white'
                 perc += 25
             }
             lowerAndUpperFound = true
@@ -175,6 +213,7 @@ function passwordStrength(e) {
 
         }else if(truthy.includes(false) || truthy.includes(true)){
             lowercaseUppercase.style.display = 'none'
+            lowerUpperCharacter.style.color = 'grey'
             if(lowerAndUpperFound === true){
                 perc -= 25
                 lowerAndUpperFound = false
